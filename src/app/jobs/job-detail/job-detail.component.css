@@ -1,0 +1,14 @@
+.width-100{
+    width:100%;
+}
+.img-style{
+    width:6em;
+}
+.type-style{
+    background-color: #0e8989;
+    border-radius:2rem;
+    padding: 0 0.5em;
+}
+.property-style{
+    color:rgb(175 171 171);
+}

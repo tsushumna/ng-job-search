@@ -1,0 +1,15 @@
+<div class="main-page" fxFlex="100" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="2em">
+
+    <div>
+        <h1 class="heading custom-color">Find Your Job</h1>
+    </div>
+
+    <mat-tab-group [(selectedIndex)]="currentTabIndex" (selectedTabChange)="onTabChanged($event)">
+        <mat-tab label="Jobs">
+            <app-job-list ></app-job-list> 
+        </mat-tab>
+        <mat-tab label="Favourites">
+            <app-job-list [isFavouriteTab] = "true" ></app-job-list> 
+        </mat-tab>
+    </mat-tab-group>
+</div>

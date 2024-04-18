@@ -1,0 +1,55 @@
+<div fxLayout="column" fxFlex="100" fxLayoutAlign="start center" fxLayoutGap="0.25em">
+
+    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="0.25em" class="width-100">
+             <i class="material-icons home cursor-pointer" (click)="onBack()">home</i>
+            <h4 class="cursor-pointer" (click)="onBack()">Back</h4>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="width-100" fxLayoutGap="1rem">
+        <div>
+            <img class="img-style" src="{{jobDetail?.companyLogo}}">
+        </div>
+        <div>
+            <h2>{{jobDetail?.companyName}} - {{jobDetail?.title}}</h2>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="0.5em">
+                <div *ngFor="let  type of jobDetail?.types?.concat(jobDetail?.industries || [])" >
+                <div class="type-style"> {{type}} </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div fxLayout="row" fxLayoutAlign="start center" class="width-100" fxLayoutGap="1rem">
+            <div class="property-style">
+                Published Date:
+            </div>
+            <div>
+                {{jobDetail?.publishDate | date:'MM/dd/yy'}}
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" class="width-100" fxLayoutGap="1rem">
+            <div class="property-style">
+                Location:
+            </div>
+            <div>
+                {{jobDetail?.location}}
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" class="width-100" fxLayoutGap="1rem">
+            <div class="property-style">
+                Reference:
+            </div>
+            <div>
+                {{jobDetail?.reference}}
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" class="width-100" fxLayoutGap="1rem">
+            <div class="property-style">
+                Description:
+            </div>
+           
+        </div>
+        <div [innerHTML]="jobDetail?.description">
+               
+        </div>
+
+</div>
