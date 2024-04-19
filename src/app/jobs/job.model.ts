@@ -4,7 +4,7 @@ export class Job {
     public title?: string;
     public companyLogo?: string;
     public reference?: string;
-    public favourite : boolean = false;
+    public favorite : boolean = false;
 
     
     

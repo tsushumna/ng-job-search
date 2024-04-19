@@ -8,11 +8,11 @@ export const routes: Routes = [
         component : HomePageComponent
     },
     {
-        path : 'favourites',
+        path : 'favorites',
         component : HomePageComponent
     },
     {
-        path : 'favourites/:id',
+        path : 'favorites/:id',
         component : JobDetailComponent
     },
     {

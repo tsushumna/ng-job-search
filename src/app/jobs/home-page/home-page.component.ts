@@ -41,7 +41,7 @@ export class HomePageComponent implements OnInit {
         this.router.navigateByUrl('/jobs');
         break;
       case 1:
-        this.router.navigateByUrl('/favourites');
+        this.router.navigateByUrl('/favorites');
         break;
       default:
         this.router.navigateByUrl('/jobs');

@@ -14,11 +14,11 @@ export class JobService {
    return this.http.get<Job[]>('/jobs');
   }
 
-  updateFavourite(i:number,job : Job){
+  updateFavorite(i:number,job : Job){
     
     let jobs :Job[] = [];
-    if(localStorage.getItem('favourites')) {
-      jobs =  JSON.parse(localStorage['favourites']);
+    if(localStorage.getItem('favorites')) {
+      jobs =  JSON.parse(localStorage['favorites']);
     }
     const index = jobs.findIndex(eachJob => eachJob.id === job.id);
     if(index > -1){
@@ -26,7 +26,7 @@ export class JobService {
     } else {
       jobs.push(job);
     }
-    localStorage.setItem('favourites',JSON.stringify(jobs));
+    localStorage.setItem('favorites',JSON.stringify(jobs));
   }
 
   findJobById(id : number){

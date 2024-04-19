@@ -14,34 +14,34 @@ import { RouterModule } from '@angular/router';
 })
 export class JobListComponent implements OnInit {
 
-  @Input() isFavouriteTab = false;
+  @Input() isFavoriteTab = false;
   jobs : Job[] = [];
   constructor(private jobService : JobService) {}
 
   ngOnInit(): void {
-    let favourites : Job[] = [];
-    if(localStorage.getItem('favourites')) {
-      favourites = JSON.parse(localStorage['favourites']);
+    let favorites : Job[] = [];
+    if(localStorage.getItem('favorites')) {
+      favorites = JSON.parse(localStorage['favorites']);
     }
 
-    if(this.isFavouriteTab){
-      this.jobs = favourites;
+    if(this.isFavoriteTab){
+      this.jobs = favorites;
     } else {
       this.jobService.getJobList().subscribe((data : Job[]) => {
         this.jobs = data;
-        favourites.forEach(eachFavourite => {
-          const index = this.jobs.findIndex(eachJob => eachJob.id === eachFavourite.id);
+        favorites.forEach(eachFavorite => {
+          const index = this.jobs.findIndex(eachJob => eachJob.id === eachFavorite.id);
           if(index > -1){
-            this.jobs[index].favourite = true;
+            this.jobs[index].favorite = true;
           }
         })
       });
     }
   }
 
-  onClickFavourite(i:number){
-    this.jobs[i].favourite = !this.jobs[i].favourite;
-    this.jobService.updateFavourite(i,this.jobs[i]);
+  onClickFavorite(i:number){
+    this.jobs[i].favorite = !this.jobs[i].favorite;
+    this.jobService.updateFavorite(i,this.jobs[i]);
   }
 
 }
