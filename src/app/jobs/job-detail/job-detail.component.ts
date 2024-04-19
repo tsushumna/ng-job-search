@@ -25,7 +25,6 @@ export class JobDetailComponent implements OnInit{
     if(params && params['jobId']){
       this.jobService.findJobById(params['jobId']).subscribe((data:Job) => {
          this.jobDetail = data;
-         console.log(this.jobDetail);
       });
     } else {
       this.onBack();
